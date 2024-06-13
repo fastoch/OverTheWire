@@ -4,15 +4,12 @@ https://overthewire.org/wargames/bandit/
 
 ## Solutions 
 
-### Level 0 
+### Level 0 --> Level 1
 
 - check your openSSH and openSSL versions: `ssh -V`
 - enable the ssh daemon at boot time: `sudo systemctl enable sshd`  
 - Connect to the server: `ssh bandit0@bandit.labs.overthewire.org -p 2220`
 - enter the first pwd => bandit0
-
-### Level 0 --> Level 1
-
 - check the contents of the current directory: `ls`
 - display the contents of the readme file: `cat readme`
 
@@ -60,7 +57,10 @@ https://overthewire.org/wargames/bandit/
 
 ### Level 4 --> Level 5
 
-
+- exit the current ssh session: `exit`
+- log into bandit1: `ssh bandit4@bandit.labs.overthewire.org -p 2220`
+- enter the pwd you've just found
+- 
 
 
 ---
