@@ -60,6 +60,17 @@ https://overthewire.org/wargames/bandit/
 - exit the current ssh session: `exit`
 - log into bandit4: `ssh bandit4@bandit.labs.overthewire.org -p 2220`
 - enter the pwd you've just found
+- display the types of all files contained in the inhere folder: `file inhere/*`
+- only one file will be human-readable, the one which type is ASCII text. Its name is -file07
+- display the pwd: `cat inhere/-file07` (use autocompletion)
+
+=> pwd for the next level = 4oQYVPkxZOOEOO5pTW81FB8j8lxXGUQw
+
+### Level 5 --> Level 6
+
+- exit the current ssh session: `exit`
+- log into bandit5: `ssh bandit5@bandit.labs.overthewire.org -p 2220`
+- enter the pwd you've just found
 - 
 
 
