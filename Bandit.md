@@ -8,7 +8,7 @@ https://overthewire.org/wargames/bandit/
 
 - check your openSSH and openSSL versions: `ssh -V`
 - enable the ssh daemon at boot time: `sudo systemctl enable sshd`  
-- Connect to the server: `ssh bandit0@bandit.labs.overthewire.org -p 2220`
+- Connect to the server as bandit0: `ssh bandit0@bandit.labs.overthewire.org -p 2220`
 - enter the first pwd => bandit0
 - check the contents of the current directory: `ls`
 - display the contents of the readme file: `cat readme`
@@ -32,7 +32,7 @@ https://overthewire.org/wargames/bandit/
 ### Level 2 --> Level 3
 
 - exit the current ssh session: `exit`
-- log into bandit1: `ssh bandit2@bandit.labs.overthewire.org -p 2220`
+- log into bandit2: `ssh bandit2@bandit.labs.overthewire.org -p 2220`
 - enter the pwd you've just found
 - this one is very easy since you just have to use autocompletion
 - type ` cat s` then press the Tab key to autocomplete
@@ -46,7 +46,7 @@ https://overthewire.org/wargames/bandit/
 ### Level 3 --> Level 4
 
 - exit the current ssh session: `exit`
-- log into bandit1: `ssh bandit3@bandit.labs.overthewire.org -p 2220`
+- log into bandit3: `ssh bandit3@bandit.labs.overthewire.org -p 2220`
 - enter the pwd you've just found
 - check the contents of the current directory: `ls`
 - display the contents of inhere, including hidden files: `ls -a inhere/`
@@ -58,7 +58,7 @@ https://overthewire.org/wargames/bandit/
 ### Level 4 --> Level 5
 
 - exit the current ssh session: `exit`
-- log into bandit1: `ssh bandit4@bandit.labs.overthewire.org -p 2220`
+- log into bandit4: `ssh bandit4@bandit.labs.overthewire.org -p 2220`
 - enter the pwd you've just found
 - 
 
