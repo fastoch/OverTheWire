@@ -10,7 +10,7 @@ https://overthewire.org/wargames/bandit/
 - enable the ssh daemon at boot time: `sudo systemctl enable sshd`  
 - Connect to the server as bandit0: `ssh bandit0@bandit.labs.overthewire.org -p 2220`
 - enter the first pwd => bandit0
-- check the contents of the current directory: `ls`
+- check the contents of the current directory: `ls -al` (-a for including hidden files, -l for long list format)
 - display the contents of the readme file: `cat readme`
 
 => password for the next level = ZjLjTmM6FvvyRnrb2rfNWOZOTa6ip5If
@@ -20,7 +20,7 @@ https://overthewire.org/wargames/bandit/
 - exit the current ssh session: `exit`
 - log into bandit1: `ssh bandit1@bandit.labs.overthewire.org -p 2220`
 - enter the pwd you've just found (ctrl+shift+c then ctrl+shift+v)
-- check the presence of the file called - with `ls`
+- check the presence of the file called - with `ls -al`
 - since you cannot display the contents of this file with `cat -`, you need to use `cat ./-`
 - the previous cmd means "display the contents of the - file that is located in the current folder
 
@@ -48,8 +48,8 @@ https://overthewire.org/wargames/bandit/
 - exit the current ssh session: `exit`
 - log into bandit3: `ssh bandit3@bandit.labs.overthewire.org -p 2220`
 - enter the pwd you've just found
-- check the contents of the current directory: `ls`
-- display the contents of inhere, including hidden files: `ls -a inhere/`
+- check the contents of the current directory: `ls -al`
+- display the contents of inhere, including hidden files: `ls -al inhere/`
 - display the contents of the hidden file located in the inhere folder: `cat inhere/...Hiding-From-You`
 - for the previous command, you can use autocompletion
 
@@ -71,8 +71,22 @@ https://overthewire.org/wargames/bandit/
 - exit the current ssh session: `exit`
 - log into bandit5: `ssh bandit5@bandit.labs.overthewire.org -p 2220`
 - enter the pwd you've just found
-- 
+- find files under the inhere folder that are 1033 bytes in size: `find inhere/* -size 1033c` 
+- https://linuxconfig.org/how-to-use-find-command-to-search-for-files-based-on-file-size
+- the previous cmd will return `inhere/maybehere07/.file2`
+- we can check this file's size and if it's executable or not with: `ls -al inhere/maybehere07 | grep '\.file2'`
+- the previous cmd confirms the file size is 1033 bytes and it's not executable (the \ is for escaping the . (dot) character)
+- last thing to check is if the file is human-readable: `file inhere/maybehere07/.file2`
+- it is human-readable, so we can now display the pwd: `cat inhere/maybehere07/.file2`
 
+=> pwd for the next level = HWasnPhtq9AVKe0dmk45nxy20cvUa6EG
+
+### Level 6 --> Level 7
+
+- exit the current ssh session: `exit`
+- log into bandit5: `ssh bandit6@bandit.labs.overthewire.org -p 2220`
+- enter the pwd you've just found
+- 
 
 ---
 EOF
