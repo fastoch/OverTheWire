@@ -106,9 +106,17 @@ https://www.cyberciti.biz/faq/bash-find-exclude-all-permission-denied-messages/
 - exit the current ssh session: `exit`
 - log into bandit5: `ssh bandit7@bandit.labs.overthewire.org -p 2220`
 - enter the pwd you've just found
+- find the file: `find -name data.txt`
+- find the password: `cat data.txt | grep millionth`
+
+=> pwd for the next level = dfwvzFQi4mU0wfNbFOe9RoWskMLg7eEc
+
+### Level 8 --> Level 9
+
+- exit the current ssh session: `exit`
+- log into bandit5: `ssh bandit8@bandit.labs.overthewire.org -p 2220`
+- enter the pwd you've just found
 - 
-
-
 
 ---
 EOF
