@@ -130,8 +130,26 @@ https://www.geeksforgeeks.org/uniq-command-in-linux-with-examples/
 - exit the current ssh session: `exit`
 - log into bandit5: `ssh bandit9@bandit.labs.overthewire.org -p 2220`
 - enter the pwd you've just found
-- 
+- check the file format of data.txt: `file data.txt` => data.txt is a binary file (data)
 
+Binary files (such as program files) may contain strings of human-readable text. But how do we get to see them?  
+If we use `cat` or `less`, we are likely to end up with a hung terminal window.  
+
+https://www.howtogeek.com/427805/how-to-use-the-strings-command-on-linux/  
+
+The `strings` command extracts strings of printable characters from files so that other commands can use the strings   
+without having to contend with non-printable characters. 
+
+- To find the human-readable strings preceded by several '=' characters: `strings data.txt | grep ==`
+
+=> pwd for the next level = FGUW5ilLVJrxX9kMYMmlN4MgbpfMiqey
+
+### Level 10 --> Level 11
+
+- exit the current ssh session: `exit`
+- log into bandit5: `ssh bandit10@bandit.labs.overthewire.org -p 2220`
+- enter the pwd you've just found
+- 
 
 ---
 EOF
