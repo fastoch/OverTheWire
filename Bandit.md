@@ -10,7 +10,7 @@ https://overthewire.org/wargames/bandit/
 - enable the ssh daemon at boot time: `sudo systemctl enable sshd`  
 - Connect to the server as bandit0: `ssh bandit0@bandit.labs.overthewire.org -p 2220`
 - enter the first pwd => bandit0
-- check the contents of the current directory: `ls -al` (-a for including hidden files, -l for long list format)
+- check the contents of the current directory: `ls -al` (-a to include hidden files, -l for long list format)
 - display the contents of the readme file: `cat readme`
 
 => password for the next level = ZjLjTmM6FvvyRnrb2rfNWOZOTa6ip5If
@@ -75,7 +75,7 @@ https://overthewire.org/wargames/bandit/
 - https://linuxconfig.org/how-to-use-find-command-to-search-for-files-based-on-file-size
 - the previous cmd will return `inhere/maybehere07/.file2`
 - we can check this file's size and if it's executable or not with: `ls -al inhere/maybehere07 | grep '\.file2'`
-- the previous cmd confirms the file size is 1033 bytes and it's not executable (the \ is for escaping the . (dot) character)
+- the previous cmd confirms the file size is 1033 bytes and it's not executable (the `\` is for escaping the `.` (dot) character)
 - last thing to check is if the file is human-readable: `file inhere/maybehere07/.file2`
 - it is human-readable, so we can now display the pwd: `cat inhere/maybehere07/.file2`
 
@@ -86,7 +86,29 @@ https://overthewire.org/wargames/bandit/
 - exit the current ssh session: `exit`
 - log into bandit5: `ssh bandit6@bandit.labs.overthewire.org -p 2220`
 - enter the pwd you've just found
+- find a file owned by user bandit7 and by group bandit6: `find / -group bandit6 -user bandit7 -ls 2>/dev/null`
+
+We search the whole file system, hence the `/` (slash) at the beginning of our cmd.
+
+We pass the `-ls` option to the `find` to list the results in ls command format.  
+https://www.cyberciti.biz/faq/how-do-i-find-all-the-files-owned-by-a-particular-user-or-group/  
+
+`2>/dev/null` is to redirect standard error to /dev/null.  
+All data written on the /dev/null special file is discarded by the system.  
+https://www.cyberciti.biz/faq/bash-find-exclude-all-permission-denied-messages/  
+
+- now we can display the password: `cat /var/lib/dpkg/info/bandit7.password`
+
+=> pwd for the next level = morbNTDkSW6jIlUc0ymOdMaLnOlFVAaj
+
+### Level 7 --> Level 8
+
+- exit the current ssh session: `exit`
+- log into bandit5: `ssh bandit7@bandit.labs.overthewire.org -p 2220`
+- enter the pwd you've just found
 - 
+
+
 
 ---
 EOF
