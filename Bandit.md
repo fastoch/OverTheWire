@@ -1,4 +1,5 @@
 https://overthewire.org/wargames/bandit/  
+help: https://mayadevbe.me/posts/overthewire/bandit/overview/
 
 ---
 
