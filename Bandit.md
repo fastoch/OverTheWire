@@ -149,6 +149,15 @@ without having to contend with non-printable characters.
 - exit the current ssh session: `exit`
 - log into bandit5: `ssh bandit10@bandit.labs.overthewire.org -p 2220`
 - enter the pwd you've just found
+- to decode the base64 encoded data: `cat data.txt | base64 -d`
+
+=> pwd for the next level = dtR173fZKb0RRsDFSGsg2RWnpNVj3qRr
+
+### Level 11 --> Level 12
+
+- exit the current ssh session: `exit`
+- log into bandit5: `ssh bandit11@bandit.labs.overthewire.org -p 2220`
+- enter the pwd you've just found
 - 
 
 ---
