@@ -172,7 +172,7 @@ https://www.baeldung.com/linux/tr-command
 - enter the pwd you've just found
 
 **Hexdumps** can be used to figure out the type of a file. Each **file type** has a **magic number/file signature**.  
-This is especially important to know because sometimes files might not have the correct or any file ending to identify their type.
+This is **especially important** to know because sometimes files might not have the correct or any file ending to identify their type.
 
 ---
 EOF
