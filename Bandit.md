@@ -158,6 +158,17 @@ without having to contend with non-printable characters.
 - exit the current ssh session: `exit`
 - log into bandit5: `ssh bandit11@bandit.labs.overthewire.org -p 2220`
 - enter the pwd you've just found
+- translate upper and lower case letters by 13 positions: `tr 'n-zabcdefghijklm:N-ZABCDEFGHIJKLM' 'a-z:A-Z' < data.txt`
+
+https://www.baeldung.com/linux/tr-command  
+
+=> pwd for the next level = 7x16WNeHIi5YkIhWsfFIqoognUTyj9Q4
+
+### Level 12 --> Level 13
+
+- exit the current ssh session: `exit`
+- log into bandit5: `ssh bandit12@bandit.labs.overthewire.org -p 2220`
+- enter the pwd you've just found
 - 
 
 ---
