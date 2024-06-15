@@ -170,7 +170,9 @@ https://www.baeldung.com/linux/tr-command
 - exit the current ssh session: `exit`
 - log into bandit5: `ssh bandit12@bandit.labs.overthewire.org -p 2220`
 - enter the pwd you've just found
-- 
+
+**Hexdumps** can be used to figure out the type of a file. Each **file type** has a **magic number/file signature**.  
+This is especially important to know because sometimes files might not have the correct or any file ending to identify their type.
 
 ---
 EOF
