@@ -116,7 +116,22 @@ https://www.cyberciti.biz/faq/bash-find-exclude-all-permission-denied-messages/
 - exit the current ssh session: `exit`
 - log into bandit5: `ssh bandit8@bandit.labs.overthewire.org -p 2220`
 - enter the pwd you've just found
+- find the only line of txt that occurs only once: `sort data.txt | uniq -u`
+
+`uniq` filters out the **adjacent** matching lines from the input file (that is required as an argument).  
+We need to use the `sort` cmd because repeated lines are not necessarily adjacent in our case.  
+The -u option will only output lines that are unique in the input.  
+https://www.geeksforgeeks.org/uniq-command-in-linux-with-examples/  
+
+=> pwd for the next level = 4CKMh1JI91bUIZZPXDqGanal4xvAg0JM
+
+### Level 9 --> Level 10
+
+- exit the current ssh session: `exit`
+- log into bandit5: `ssh bandit9@bandit.labs.overthewire.org -p 2220`
+- enter the pwd you've just found
 - 
+
 
 ---
 EOF
