@@ -203,10 +203,15 @@ There will be 3 tasks:
 - create a temporary folder: `mktemp -d`
 - navigate to this folder, in my case: `cd tmp.r0JOTbLpJ2`
 - copy the data file from the home dir to the temp dir: `cp ~/data.txt .`
+- check the copy with `ls`
 - rename the file: `mv data.txt hexdump_data`
+- check the renaming with `ls`
 
 ### Revert the hexdump and decompress the file
 
+- look at the file to check if it is hexdump data: `cat hexdump_data | head`
+- to operate on the actual data, we first need to revert the hexdump: `xxd -r hexdump_data compressed_data`
+- run `ls` to see that we now have 2 files: the hexdump and the actual data in a compressed format
 - 
 
 => pwd for the next level = 
