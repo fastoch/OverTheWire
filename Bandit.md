@@ -237,13 +237,29 @@ For **bzip2** files the header is 42 5A 68
 - show the contents of the archive: `tar -tf compressed_data.tar` => only contains one file named data5.bin
 - `tar -xf compressed_data.tar` to extract the file and `ls` to check
 - `file data5.bin` reveals that it's another archive file
-- rename the file: `mv data5.bin data5.bin.tar`
-- check the archive contents: `tar -tf data5.bin.tar` => contains one file named data6.bin
-- extract the archive: `tar -xf data5.bin.tar` and `ls` to check
+- rename the file: `mv data5.bin data5.tar`
+- check the archive contents: `tar -tf data5.tar` => contains one file named data6.bin
+- extract the archive: `tar -xf data5.tar` and `ls` to check
 - `file data6.bin` shows that it's bzip2 compressed data
-- 
+- `mv data6.bin data6.bz2`
+- `bzip2 -d data6.bz2`
+- `file data6.bin` => tar archive
+- `mv data6.bin data6.tar`
+- `tar -tf data6.tar` => 1 file named data8.bin
+- `tar -xf data6.tar`
+- `file data8.bin` => gzip file
+- `mv data8.bin data8.gz`
+- `gzip -d data8.gz` => data8
+- `cat data8`
 
-=> pwd for the next level = 
+=> pwd for the next level = FO5dwFsc0cbaIiH0h8J2eUks2vdTDwAn
+
+## Level 13 --> Level 14
+
+- exit the current ssh session: `exit`
+- log into bandit5: `ssh bandit13@bandit.labs.overthewire.org -p 2220`
+- enter the pwd you've just found
+- 
 
 ---
 EOF
