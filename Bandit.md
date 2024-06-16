@@ -234,6 +234,13 @@ For **bzip2** files the header is 42 5A 68
 - `gzip -d compressed_data.gz`
 - now if we run `file compressed_data`, it returns `POSIX tar archive (GNU)`
 - rename the file: `mv compressed_data compressed_data.tar`
+- show the contents of the archive: `tar -tf compressed_data.tar` => only contains one file named data5.bin
+- `tar -xf compressed_data.tar` to extract the file and `ls` to check
+- `file data5.bin` reveals that it's another archive file
+- rename the file: `mv data5.bin data5.bin.tar`
+- check the archive contents: `tar -tf data5.bin.tar` => contains one file named data6.bin
+- extract the archive: `tar -xf data5.bin.tar` and `ls` to check
+- `file data6.bin` shows that it's bzip2 compressed data
 - 
 
 => pwd for the next level = 
