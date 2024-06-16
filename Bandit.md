@@ -178,8 +178,7 @@ https://www.baeldung.com/linux/tr-command
 **Hexdumps** can be used to figure out the type of a file. Each **file type** has a **magic number/file signature**.  
 This is **very important** because sometimes files might not have the correct or any file ending to identify their type.  
 
-**Compression** is a method of encoding that aims to reduce the original size of a file without losing information  
-(or only losing as little as possible).  
+**Compression** is a method of encoding that aims to reduce the original size of a file without losing (much) information.  
 
 **gzip** is a command to compress or decompress (-d) files. A ‘gzip’ file generally ends with **.gz**.  
 **bzip2** is another command which allows for compressing and decompressing (-d) files. A ‘bzip2’ file generally ends with **.bz2**.
@@ -192,7 +191,7 @@ A tar archive generally ends with **.tar**.
 ---
 
 There will be 3 tasks:
-- Setting up a directory
+- Setting up a temporary directory
 - Reverting the hexdump
 - Decompressing
 
@@ -209,9 +208,32 @@ There will be 3 tasks:
 
 ### Revert the hexdump and decompress the file
 
-- look at the file to check if it is hexdump data: `cat hexdump_data | head`
+- look at the first lines of the file to check if it is hexdump data: `cat hexdump_data | head` 
 - to operate on the actual data, we first need to revert the hexdump: `xxd -r hexdump_data compressed_data`
 - run `ls` to see that we now have 2 files: the hexdump and the actual data in a compressed format
+
+We now need to decompress the data.  
+To figure out what decompression we need to use, look at the first bytes in the hexdump to find the file signature.  
+
+src = https://www.garykessler.net/library/file_sigs.html  
+For **gzip** files the header is 1F 8B 08  
+For **bzip2** files the header is 42 5A 68
+
+- to show the first bytes of the hexdump: `cat hexdump_data | head` => 1f 8b 08
+- now we know this is a gzip file, we can add the correct file ending and decompress the file
+- `mv compressed_data compressed_data.gz`
+- `gzip -d compressed_data.gz`
+- However, the data is still not fully decompressed, so we look at the first bytes again
+- `xxd compressed_data | head` => 42 5A 68
+- we can rename the file with the appropriate file ending (.bz2) and decompress it
+- `mv compressed_data compressed_data.bz2`
+- `bzip2 -d compressed_data.bz2`
+- And the file is still compressed. `xxd compressed_data | head` shows that it is gzip.
+- We repeat the previous steps
+- `mv compressed_data compressed_data.gz`
+- `gzip -d compressed_data.gz`
+- now if we run `file compressed_data`, it returns `POSIX tar archive (GNU)`
+- rename the file: `mv compressed_data compressed_data.tar`
 - 
 
 => pwd for the next level = 
