@@ -3,9 +3,9 @@ help: https://mayadevbe.me/posts/overthewire/bandit/overview/
 
 ---
 
-## Solutions 
+# Solutions 
 
-### Level 0 --> Level 1
+## Level 0 --> Level 1
 
 - check your openSSH and openSSL versions: `ssh -V`
 - enable the ssh daemon at boot time: `sudo systemctl enable sshd`  
@@ -16,7 +16,7 @@ help: https://mayadevbe.me/posts/overthewire/bandit/overview/
 
 => password for the next level = ZjLjTmM6FvvyRnrb2rfNWOZOTa6ip5If
 
-### Level 1 --> Level 2
+## Level 1 --> Level 2
 
 - exit the current ssh session: `exit`
 - log into bandit1: `ssh bandit1@bandit.labs.overthewire.org -p 2220`
@@ -30,7 +30,7 @@ help: https://mayadevbe.me/posts/overthewire/bandit/overview/
 
 => passwd for the nxt level = 263JGJPfgU6LtdEvgfWU1XP5yac29mFx
 
-### Level 2 --> Level 3
+## Level 2 --> Level 3
 
 - exit the current ssh session: `exit`
 - log into bandit2: `ssh bandit2@bandit.labs.overthewire.org -p 2220`
@@ -56,7 +56,7 @@ help: https://mayadevbe.me/posts/overthewire/bandit/overview/
 
 => pwd for the next level = 2WmrDFRmJIq3IPxneAaMGhap0pFhF3NJ
 
-### Level 4 --> Level 5
+## Level 4 --> Level 5
 
 - exit the current ssh session: `exit`
 - log into bandit4: `ssh bandit4@bandit.labs.overthewire.org -p 2220`
@@ -67,7 +67,7 @@ help: https://mayadevbe.me/posts/overthewire/bandit/overview/
 
 => pwd for the next level = 4oQYVPkxZOOEOO5pTW81FB8j8lxXGUQw
 
-### Level 5 --> Level 6
+## Level 5 --> Level 6
 
 - exit the current ssh session: `exit`
 - log into bandit5: `ssh bandit5@bandit.labs.overthewire.org -p 2220`
@@ -82,7 +82,7 @@ help: https://mayadevbe.me/posts/overthewire/bandit/overview/
 
 => pwd for the next level = HWasnPhtq9AVKe0dmk45nxy20cvUa6EG
 
-### Level 6 --> Level 7
+## Level 6 --> Level 7
 
 - exit the current ssh session: `exit`
 - log into bandit5: `ssh bandit6@bandit.labs.overthewire.org -p 2220`
@@ -102,7 +102,7 @@ https://www.cyberciti.biz/faq/bash-find-exclude-all-permission-denied-messages/
 
 => pwd for the next level = morbNTDkSW6jIlUc0ymOdMaLnOlFVAaj
 
-### Level 7 --> Level 8
+## Level 7 --> Level 8
 
 - exit the current ssh session: `exit`
 - log into bandit5: `ssh bandit7@bandit.labs.overthewire.org -p 2220`
@@ -112,7 +112,7 @@ https://www.cyberciti.biz/faq/bash-find-exclude-all-permission-denied-messages/
 
 => pwd for the next level = dfwvzFQi4mU0wfNbFOe9RoWskMLg7eEc
 
-### Level 8 --> Level 9
+## Level 8 --> Level 9
 
 - exit the current ssh session: `exit`
 - log into bandit5: `ssh bandit8@bandit.labs.overthewire.org -p 2220`
@@ -126,7 +126,7 @@ https://www.geeksforgeeks.org/uniq-command-in-linux-with-examples/
 
 => pwd for the next level = 4CKMh1JI91bUIZZPXDqGanal4xvAg0JM
 
-### Level 9 --> Level 10
+## Level 9 --> Level 10
 
 - exit the current ssh session: `exit`
 - log into bandit5: `ssh bandit9@bandit.labs.overthewire.org -p 2220`
@@ -145,7 +145,7 @@ without having to contend with non-printable characters.
 
 => pwd for the next level = FGUW5ilLVJrxX9kMYMmlN4MgbpfMiqey
 
-### Level 10 --> Level 11
+## Level 10 --> Level 11
 
 - exit the current ssh session: `exit`
 - log into bandit5: `ssh bandit10@bandit.labs.overthewire.org -p 2220`
@@ -154,7 +154,7 @@ without having to contend with non-printable characters.
 
 => pwd for the next level = dtR173fZKb0RRsDFSGsg2RWnpNVj3qRr
 
-### Level 11 --> Level 12
+## Level 11 --> Level 12
 
 - exit the current ssh session: `exit`
 - log into bandit5: `ssh bandit11@bandit.labs.overthewire.org -p 2220`
@@ -165,14 +165,51 @@ https://www.baeldung.com/linux/tr-command
 
 => pwd for the next level = 7x16WNeHIi5YkIhWsfFIqoognUTyj9Q4
 
-### Level 12 --> Level 13
+## Level 12 --> Level 13
 
 - exit the current ssh session: `exit`
 - log into bandit5: `ssh bandit12@bandit.labs.overthewire.org -p 2220`
 - enter the pwd you've just found
 
+---
+
+### Some theory
+
 **Hexdumps** can be used to figure out the type of a file. Each **file type** has a **magic number/file signature**.  
-This is **especially important** to know because sometimes files might not have the correct or any file ending to identify their type.
+This is **very important** because sometimes files might not have the correct or any file ending to identify their type.  
+
+**Compression** is a method of encoding that aims to reduce the original size of a file without losing information  
+(or only losing as little as possible).  
+
+**gzip** is a command to compress or decompress (-d) files. A ‘gzip’ file generally ends with **.gz**.  
+**bzip2** is another command which allows for compressing and decompressing (-d) files. A ‘bzip2’ file generally ends with **.bz2**.
+
+An **Archive** File is a file that contains one or multiple files and their metadata. This can allow easier **portability**.  
+
+**tar** is a command that creates **archive** files (-cf). It also allows **extracting** these files again (-xf).  
+A tar archive generally ends with **.tar**.
+
+---
+
+There will be 3 tasks:
+- Setting up a directory
+- Reverting the hexdump
+- Decompressing
+
+### Create a directory, copy the file, rename it
+
+- once logged in, check home directory content: `ls`
+- navigate to the tmp folder: `cd /tmp`
+- create a temporary folder: `mktemp -d`
+- navigate to this folder, in my case: `cd tmp.r0JOTbLpJ2`
+- copy the data file from the home dir to the temp dir: `cp ~/data.txt .`
+- rename the file: `mv data.txt hexdump_data`
+
+### Revert the hexdump and decompress the file
+
+- 
+
+=> pwd for the next level = 
 
 ---
 EOF
