@@ -267,7 +267,16 @@ For **bzip2** files the header is 42 5A 68
 - use **scp** to connect to the remote machine and copy the private ssh key to your current folder:
   - `scp -P 2220 bandit13@bandit.labs.overthewire.org:sshkey.private .`
   - when prompted for the pwd, enter the pwd you've found after solving the previous level
-- now that you have copied the private ssh key to your local machine, 
+- now that you have copied the private ssh key to your local machine, you can try and use it to connect as bandit14
+  - `ssh -i sshkey.private bandit14@bandit.labs.overthewire.org -p 2220`
+- But you'll get a warning because the permissions for your private key are too open (640)
+- Modify the permissions so only the owner (you) has permissions for this file: `chmod 700 sshkey.private`
+- Now it is possible to use the key to log into the new level
+
+## Level 14 --> Level 15
+
+- `ssh -i sshkey.private bandit14@bandit.labs.overthewire.org -p 2220`
+- 
 
 ---
 EOF
