@@ -275,8 +275,31 @@ For **bzip2** files the header is 42 5A 68
 
 ## Level 14 --> Level 15
 
-- `ssh -i sshkey.private bandit14@bandit.labs.overthewire.org -p 2220`
+- connect as bandit14 using the private key: `ssh -i sshkey.private bandit14@bandit.labs.overthewire.org -p 2220`
+- as stated in the previous level, the pwd of the current level is in /etc/bandit_pass/bandit14
+- `cat /etc/bandit_pass/bandit14` gives us the pwd for level 14 => MU4VWeTyJk8ROof1qqmcBPaLh7lDCPvS
+
+### Some theory
+
+**nc** or **netcat** is a command that allows to read and write data over a network connection.  
+It can be used for TCP and UDP connections.  
+
+To connect to a service (as client) on a network the command syntax is the following: `nc <host> <port>`.  
+To create a server that listens to incoming packets, the command looks like this: `nc -l <port>`.
+
+- let's submit our pwd to port 30000 on localhost: `nc localhost 30000` then copy-paste the pwd
+- this should tell you that the pwd is correct and provide you the next one
+
+=> pwd for the nxt lvl = 8xCjnmgoKbGLhHFAZlGE5Tmu4M2tKJQo
+
+## Level 15 --> Level 16
+
+- exit the current session
+- connect to the server as bandit15: `ssh bandit15@bandit.labs.overthewire.org -p 2220`
 - 
+
+
+
 
 ---
 EOF
