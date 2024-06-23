@@ -264,7 +264,7 @@ For **bzip2** files the header is 42 5A 68
 >[!tip]
 >**scp** is a command that uses SSH to transfer data over the network. Syntax: `scp -P <port> <user>@<IP>:<remotefilepath>`
 
-- use **scp** to connect to the remote machine and copy the private ssh key to your current folder:
+- use **scp** to connect to the remote machine and copy the private ssh key to your current folder (`.`):
   - `scp -P 2220 bandit13@bandit.labs.overthewire.org:sshkey.private .`
   - when prompted for the pwd, enter the pwd you've found after solving the previous level
 - now that you have copied the private ssh key to your local machine, you can try and use it to connect as bandit14
