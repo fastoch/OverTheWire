@@ -287,7 +287,7 @@ It can be used for TCP and UDP connections.
 To connect to a service (as client) on a network the command syntax is the following: `nc <host> <port>`.  
 To create a server that listens to incoming packets, the command looks like this: `nc -l <port>`.
 
-- let's submit our pwd to port 30000 on localhost: `nc localhost 30000` then copy-paste the pwd
+- let's conenct to port 30000 on localhost: `nc localhost 30000` then copy-paste the pwd
 - this should tell you that the pwd is correct and provide you the next one
 
 => pwd for the nxt lvl = 8xCjnmgoKbGLhHFAZlGE5Tmu4M2tKJQo
@@ -296,6 +296,7 @@ To create a server that listens to incoming packets, the command looks like this
 
 - exit the current session
 - connect to the server as bandit15: `ssh bandit15@bandit.labs.overthewire.org -p 2220`
+- enter the password you've just found
 - 
 
 
